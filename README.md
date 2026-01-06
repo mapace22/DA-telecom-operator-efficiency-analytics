@@ -1,110 +1,62 @@
-# proyecto_15_telecom
-Análisis de eficacia operacional en telefonía virtual | Pruebas de hipótesis, Variables | KPIs y Estrategias | Tableau | Python | Pandas 
+# 📞 CallMeMaybe: Operational Efficiency & Telecom Analytics
 
-# 📊 Dashboard de Eficiencia para Call Center de Telecomunicaciones
+## 🎯 Project Objective
+The goal of this project was to identify and quantify operational ineffectiveness within the **CallMeMaybe** virtual telephony service. By integrating call logs and client data, I developed a data-driven framework to classify operator performance based on key metrics like missed calls, waiting times (AWT), and call duration (ACD).
 
-## 📋 Resumen Ejecutivo
-**Fecha:** 18/08/2025  
-**Analista:** Marcel Andrés Palma Céspedes
+## 🛠️ Technical Pipeline & Methodology
+The project followed a robust data science workflow:
 
-Este análisis evalúa el desempeño de los operadores del servicio de telefonía virtual CallMeMaybe para identificar y cuantificar ineficiencias operacionales. El proyecto utiliza datos de llamadas y clientes con metodologías avanzadas de procesamiento de datos, análisis exploratorio y pruebas de hipótesis.
+1.  **Data Integration & Engineering:** Unified disparate datasets and engineered the `wait_time` and `is_ineffective` features based on business logic.
+2.  **Exploratory Data Analysis (EDA):** Identified critical systemic issues, such as a **52.73% missed call rate**, far exceeding industry standards.
+3.  **Statistical Validation:** Performed **Mann-Whitney U tests** (non-parametric) to validate if the differences in performance between operator segments were statistically significant.
+4.  **Business Intelligence:** Designed and deployed a three-level interactive dashboard in **Tableau** for real-time monitoring.
 
-## 🔍 Hallazgos Clave
 
-### ⚠️ Problemas de Desempeño Individual del Operador
-- **⏱️ Duración Promedio de Llamada (ACD):** 26.0 minutos (vs estándar de industria 3-6 minutos)
-- **⏳ Tiempos de Espera Excesivos (AWT):** 100.61 segundos (vs ideal <30 segundos)
-- **📞 Falta de Proactividad:** Disparidad significativa en distribución de llamadas salientes
 
-### 🚨 Problemas Operativos Sistémicos
-- **❌ Tasa de Llamadas Perdidas:** 52.73% (vs estándar de industria 5-8%)
-- **⚖️ Distribución Desigual de Carga de Trabajo:** La mayoría de operadores manejan volúmenes bajos de llamadas
+## 📊 Key Findings & Metrics
+My analysis revealed significant disparities in operator activity and systemic bottlenecks:
 
-## 📊 Características del Dashboard
+* **Average Call Duration (ACD):** 26.0 minutes (Industry benchmark: 3-6 min).
+* **Average Waiting Time (AWT):** 100.61 seconds (Ideal: <30 sec).
+* **Workload Imbalance:** A Pareto analysis (80/20) showed that a small percentage of operators handle the majority of the volume, while many remain underutilized.
 
-### 🎯 Estructura de Tres Niveles
-1. **Sección Superior - KPIs Principales**
-   - Métricas en tiempo real de ACD y AWT
-   - Seguimiento de tasa de llamadas perdidas
-   - Tarjetas de evaluación rápida de desempeño
+### Statistical Highlights:
+* Applied segment classification using **percentiles** to set fair performance thresholds.
+* Validated the "Ineffective" label through hypothesis testing, ensuring recommendations are backed by data, not just intuition.
 
-2. **Sección Media - Análisis Detallado**
-   - Barras de desempeño individual por operador
-   - Análisis Pareto para llamadas perdidas
-   - Ranking de eficiencia de operadores
-
-3. **Sección Inferior - Información Contextual**
-   - Proporción de llamadas entrantes/salientes
-   - Gráficos de dispersión tiempo de espera vs duración
-   - Patrones de distribución de llamadas
-
-## ⚙️ Implementación Técnica
-
-### 📈 Visualizaciones Incluidas
-- ✅ Tarjetas de desempeño de KPIs
-- 📊 Gráficos de barras AWT/ACD por operador
-- 📉 Gráficos Pareto (análisis 80/20)
-- 🔄 Gráficos circulares de dirección de llamadas
-- ⏱️ Histogramas de duración de llamadas (intervalos de 360 seg)
-- 📈 Gráficos de dispersión con líneas de tendencia
-- ❓ Tablas de análisis de valores NULL
-
-### 🔧 Funcionalidades Interactivas
-- 🎛️ Filtro global de ID de Operador
-- 🔄 Filtrado cruzado entre gráficos
-- 📱 Diseño responsive
-- 📅 Selección de rango de fechas
-- 👥 Filtrado por equipo/supervisor
+## 📈 Interactive Dashboard
+The solution features a professional **Tableau Dashboard** structured for different stakeholders:
+* **Executive Level:** Top-level KPIs for quick decision-making.
+* **Tactical Level:** Pareto charts and individual operator rankings for supervisors.
+* **Granular Level:** Scatter plots and trend lines to identify correlations between wait times and duration.
 
 ## 📁 Enlaces del Proyecto
-
 ### 🌐 Dashboard en Vivo
-[**Dashboard de Tableau Public**]
-https://public.tableau.com/views/proyecto_final_telecom/DashboardTelecomcontrolsobreoperadoresineficaces?:language=es-ES&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+🔗 **[View Live Dashboard on Tableau Public](https://public.tableau.com/views/proyecto_final_telecom/DashboardTelecomcontrolsobreoperadoresineficaces?:language=es-ES&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)**
 
 ### 📂 Documentación y Datos
 [**Carpeta de Google Drive**]
 https://drive.google.com/drive/folders/1vbRrGZHt6WKWrc_Y1ii4uYfKO9xac-wC?usp=sharing
 
-** Se incluye:**
-- 📄 Reporte completo en PDF
-- 📝 Mapa mental
-- 🐍 Jupyter Notebook con preprocesamiento
-- 🗃️ Datasets originales y procesados
-- 📋 Readme
 
-## 🛠️ Stack Tecnológico
-- **Tableau Public** - Visualización de datos
-- **Python/Jupyter** - Preprocesamiento de datos
-- **Google Drive** - Almacenamiento de documentación
-- **Análisis Estadístico** - Pruebas U de Mann-Whitney
+## 💡 Strategic Recommendations
+1.  **Immediate Deployment:** Use the dashboard to redistribute workloads and reduce the current 52% missed call rate.
+2.  **Training Programs:** Targeted coaching for operators with high AWT/ACD metrics to align them with industry standards.
+3.  **Incentive Structures:** Implement a performance-based bonus system using the efficiency ranking developed in this analysis.
 
-## 🎯 Metodología
-- **Integración de Datos:** Unificación de datasets de llamadas y clientes
-- **Creación de Métricas:** Desarrollo de variable wait_time
-- **Pruebas Estadísticas:** Validación de hipótesis no paramétricas
-- **Segmentación por Percentiles:** Clasificación de eficiencia de operadores
+## 📂 Project Structure
+* `proyecto_15_telecom.ipynb`: Full Python pipeline (Preprocessing + Stats).
+* `Informe_Ejecutivo_CallMeMaybe.pdf`: Comprehensive business report for stakeholders.
+* `data/`: Original and processed datasets (`telecom_final_dataset.csv`).
+* `readme.txt`: Technical instructions and dashboard links.
 
-## 👥 Stakeholders Clave
-- 🎯 **Alto Poder/Alto Interés:** Supervisores de Call Center, Gerencia de Call Center
-- 🔧 **Alto Poder/Interés Medio:** Departamento de RH
-- 📊 **Interés Medio:** Operadores, Clientes
+## 🚀 Tech Stack
+* **Visualization:** Tableau Public.
+* **Data Processing:** Python (Pandas, NumPy).
+* **Statistics:** SciPy (Mann-Whitney U Test).
+* **Documentation:** Google Drive / PDF Reporting.
 
-## 🚀 Acciones Recomendadas
-
-1. **Implementación Inmediata**
-   - Despliegue de dashboard para monitoreo en tiempo real
-   - Protocolos de redistribución de carga de trabajo
-   - Revaluación de niveles de personal
-
-2. **Soluciones a Mediano Plazo**
-   - Programas de capacitación para operadores
-   - Optimización de procesos
-   - Estructuras de incentivos de desempeño
-
-3. **Estrategia a Largo Plazo**
-   - Revisión operativa sistémica
-   - Actualizaciones de infraestructura tecnológica
-   - Marco de monitoreo continuo
-     
-*Para más información, contactar mediante los enlaces proporcionados* 🚀
+---
+**Author:** Marcel Andrés Palma Céspedes  
+**Role:** Data Scientist / Business Intelligence Analyst  
+**Date:** 08/18/2025
